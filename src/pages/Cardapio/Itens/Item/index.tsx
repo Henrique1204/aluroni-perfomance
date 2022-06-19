@@ -29,4 +29,4 @@ const Item: React.FC<Prato> = (props) => {
   );
 };
 
-export default Item;
+export default React.memo(Item);
