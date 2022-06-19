@@ -9,6 +9,8 @@ interface IBuscadorProps {
 }
 
 const Buscador: React.FC<IBuscadorProps> = ({ busca, setBusca }) => {
+  const IconElement = React.useMemo(() => <CgSearch size={20} color="#4C4D5E" />, []);
+
   return (
     <div className={styles.buscador}>
       <input
@@ -17,7 +19,7 @@ const Buscador: React.FC<IBuscadorProps> = ({ busca, setBusca }) => {
         placeholder="Buscar"
       />
 
-      <CgSearch size={20} color="#4C4D5E" />
+      {IconElement}
     </div>
   );
 };
