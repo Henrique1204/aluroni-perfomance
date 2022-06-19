@@ -1,0 +1,63 @@
+@import "styles/variaveis";
+
+.ordenador {
+  min-width: 240px;
+  height: 40px;
+  padding: 0 40px;
+  border: none;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+
+  font-size: 1rem;
+  font-weight: bold;
+  
+  background-color: $grey;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+
+  &--ativo {
+    color: white;
+    background-color: $blue;
+  }
+
+  &__options {
+    width: 100%;
+
+    display: none;
+    flex-direction: column;
+
+    position: absolute;
+    left: 0;
+    top: 100%;
+
+    &--ativo {
+      display: flex;
+    }
+  }
+
+  &__option {
+    width: inherit;
+    height: 40px;
+    border-top: 2px solid $light-grey;
+    box-sizing: border-box;
+
+    color: $black;
+    background-color: $grey;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover,
+    &--ativo {
+      color: white;
+      background-color: $blue;
+
+      cursor: pointer;
+    }
+  }
+}
