@@ -22,4 +22,4 @@ const Buscador: React.FC<IBuscadorProps> = ({ busca, setBusca }) => {
   );
 };
 
-export default Buscador;
+export default React.memo(Buscador);

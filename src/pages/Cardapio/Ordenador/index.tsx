@@ -56,4 +56,4 @@ const Ordenador: React.FC<IOrdenadorProps> = ({
   );
 };
 
-export default Ordenador;
+export default React.memo(Ordenador);

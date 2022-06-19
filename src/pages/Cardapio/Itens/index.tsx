@@ -58,4 +58,4 @@ const Itens: React.FC<IItensProps> = (props) => {
   );
 };
 
-export default Itens;
+export default React.memo(Itens);

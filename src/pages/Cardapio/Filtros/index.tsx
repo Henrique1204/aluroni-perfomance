@@ -33,5 +33,5 @@ const Filtros: React.FC<IFiltrosProps> = ({ filtro, setFiltro }) => {
   );
 };
 
-export default Filtros;
+export default React.memo(Filtros);
   
