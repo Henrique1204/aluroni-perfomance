@@ -13,13 +13,13 @@ const Prato = React.lazy(() => import('pages/Prato'));
 const Sobre = React.lazy(() => import('pages/Sobre'));
 
 
-const AppRouter = () => {
+const AppRouter: React.FC = () => {
   return (
     <main className="container">
       <BrowserRouter>
-        <React.Suspense fallback={<p>Carregando...</p>}>
-          <Menu />
+        <Menu />
 
+        <React.Suspense fallback={<p>Carregando...</p>}>
           <Routes>
             <Route path="/" element={<PaginaPadrao />}>
               <Route index element={<Inicio />} />
@@ -30,9 +30,9 @@ const AppRouter = () => {
             <Route path="prato/:id" element={<Prato />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-
-          <Footer />
         </React.Suspense>
+
+        <Footer />
       </BrowserRouter>
     </main>
   );
