@@ -1,22 +1,22 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Footer from 'components/Footer';
 import Menu from 'components/Menu';
-import PaginaPadrao from 'components/PaginaPadrao';
 
-// import Cardapio from 'pages/Cardapio';
-import Inicio from 'pages/Inicio';
-import NotFound from 'pages/NotFound';
-import Prato from 'pages/Prato';
-import Sobre from 'pages/Sobre';
+const PaginaPadrao = React.lazy(() => import('components/PaginaPadrao'));
 
+const Inicio = React.lazy(() => import('pages/Inicio'));
 const Cardapio = React.lazy(() => import('pages/Cardapio'));
+const NotFound = React.lazy(() => import('pages/NotFound'));
+const Prato = React.lazy(() => import('pages/Prato'));
+const Sobre = React.lazy(() => import('pages/Sobre'));
+
 
 const AppRouter = () => {
   return (
     <main className="container">
-      <Router>
+      <BrowserRouter>
         <React.Suspense fallback={<p>Carregando...</p>}>
           <Menu />
 
@@ -33,7 +33,7 @@ const AppRouter = () => {
 
           <Footer />
         </React.Suspense>
-      </Router>
+      </BrowserRouter>
     </main>
   );
 };
